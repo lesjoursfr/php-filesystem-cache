@@ -1,0 +1,37 @@
+{
+	"eslint.format.enable": true,
+	"files.exclude": {
+		"**/.git/**": true,
+		"**/vendor/**": true,
+		"**/.phpunit.cache/**": true
+	},
+	"search.exclude": {
+		"**/.git/**": true,
+		"**/vendor/**": true,
+		"**/.phpunit.cache/**": true
+	},
+	"files.watcherExclude": {
+		"**/.git/**": true,
+		"**/vendor/**": true,
+		"**/.phpunit.cache/**": true
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "explicit",
+		"source.organizeImports": "explicit"
+	},
+	"phpcs.enable": true,
+	"phpcs.composerJsonPath": "composer.json",
+	"phpcs.standard": "./phpcs.xml",
+	"phpcs.showSources": true,
+	"phpcs.ignorePatterns": [	],
+	"php-cs-fixer.config": ".php-cs-fixer.php",
+	"php-cs-fixer.onsave": false,
+	"phpstan.enabled": true,
+	"phpstan.enableLanguageServer": false,
+	"phpstan.binPath": "./vendor/bin/phpstan",
+	"phpstan.configFile": "./phpstan.neon",
+	"phpstan.timeout": 60000,
+	"[php]": {
+		"editor.defaultFormatter": "junstyle.php-cs-fixer"
+	},
+}

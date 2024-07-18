@@ -1,0 +1,46 @@
+name: QC Checks
+
+on:
+  push:
+    branches-ignore:
+      - renovate/*
+      - stable
+      - beta
+    tags-ignore:
+      - "**"
+
+jobs:
+  checks:
+    name: QC Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use PHP 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          coverage: none
+          tools: composer, cs2pr
+
+      - name: Composer install
+        run: |
+          composer install
+          ./vendor/squizlabs/php_codesniffer/bin/phpcs --config-set installed_paths vendor/escapestudios/symfony2-coding-standard
+
+      - name: Check composer.json
+        run: composer validate
+
+      - name: PHPStan checks
+        run: vendor/bin/phpstan analyse
+
+      - name: PHPCS checks
+        continue-on-error: true
+        run: vendor/squizlabs/php_codesniffer/bin/phpcs --standard=./phpcs.xml --no-cache --parallel=1 --report-full --report-checkstyle=./phpcs-report.xml ./src ./tests
+
+      - name: Show PHPCS results in PR
+        run: cs2pr ./phpcs-report.xml
+
+      - name: PHPUnit tests
+        run: vendor/bin/phpunit

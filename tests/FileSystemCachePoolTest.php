@@ -1,23 +1,15 @@
 <?php
 
-/*
- * This file is part of php-cache organization.
- *
- * (c) 2015 Aaron Scherer <aequasi@gmail.com>, Tobias Nyholm <tobias.nyholm@gmail.com>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
+namespace FileSystemCache\Tests;
 
-namespace Cache\Adapter\Filesystem\Tests;
-
+use FileSystemCache\Tests\Trait\CreatePoolTrait;
 use PHPUnit\Framework\TestCase;
 use Psr\Cache\InvalidArgumentException;
 
 /**
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  */
-class FilesystemCachePoolTest extends TestCase
+class FileSystemCachePoolTest extends TestCase
 {
     use CreatePoolTrait;
 
@@ -38,13 +30,13 @@ class FilesystemCachePoolTest extends TestCase
         $item->set('data');
         $item->expiresAt(new \DateTime('now'));
         $pool->save($item);
-        $this->assertTrue($this->getFilesystem()->has('cache/test_ttl_null'));
+        $this->assertTrue($this->getFilesystem()->fileExists('cache/test_ttl_null'));
 
         sleep(1);
 
         $item = $pool->getItem('test_ttl_null');
         $this->assertFalse($item->isHit());
-        $this->assertFalse($this->getFilesystem()->has('cache/test_ttl_null'));
+        $this->assertFalse($this->getFilesystem()->fileExists('cache/test_ttl_null'));
     }
 
     public function testChangeFolder()
@@ -53,7 +45,7 @@ class FilesystemCachePoolTest extends TestCase
         $pool->setFolder('foobar');
 
         $pool->save($pool->getItem('test_path'));
-        $this->assertTrue($this->getFilesystem()->has('foobar/test_path'));
+        $this->assertTrue($this->getFilesystem()->fileExists('foobar/test_path'));
     }
 
     public function testCorruptedCacheFileHandledNicely()
