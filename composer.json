@@ -1,7 +1,7 @@
 {
 	"name": "lesjoursfr/filesystem-cache",
 	"type": "library",
-	"version": "1.2.0",
+	"version": "2.0.0",
 	"description": "A PSR-6 cache implementation using filesystem. This implementation supports tags",
 	"keywords": [
 		"cache",
@@ -60,6 +60,7 @@
 			".editorconfig",
 			".gitignore",
 			".php-cs-fixer.php",
+			".whitesource",
 			"vendor",
 			"composer.lock",
 			"composer.phar",
