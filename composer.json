@@ -25,7 +25,7 @@
 		}
 	},
 	"require": {
-		"php": "^8.0",
+		"php": "^8.3.10",
 		"psr/cache": "^3.0",
 		"psr/log": "^3.0",
 		"psr/simple-cache": "^3.0"
