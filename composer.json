@@ -32,7 +32,7 @@
 	},
 	"require-dev": {
 		"escapestudios/symfony2-coding-standard": "^3.13.0",
-		"phpunit/phpunit": "^11.2.8",
+		"phpunit/phpunit": "^11.2.9",
 		"phpstan/phpstan": "^1.11.8",
 		"phpstan/extension-installer": "^1.4.1",
 		"phpstan/phpstan-phpunit": "^1.4.0",
