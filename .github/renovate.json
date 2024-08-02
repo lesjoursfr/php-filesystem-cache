@@ -16,6 +16,11 @@
 			"matchUpdateTypes": ["minor", "patch"],
 			"groupName": "all non-major dependencies",
 			"groupSlug": "all-minor-patch"
+		},
+		{
+			"matchDatasources": ["github-tags"],
+			"matchPackageNames": ["containerbase/php-prebuild"],
+			"enabled": false
 		}
 	],
 	"ignorePaths": ["**/docs/**"]
