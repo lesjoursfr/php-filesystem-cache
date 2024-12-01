@@ -8,7 +8,7 @@
 	"packageRules": [
 		{
 			"matchDatasources": ["packagist"],
-			"stabilityDays": 3
+			"minimumReleaseAge": "3 days"
 		},
 		{
 			"matchDatasources": ["packagist"],
