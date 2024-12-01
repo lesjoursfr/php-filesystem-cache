@@ -1,5 +1,5 @@
 {
-	"extends": ["config:base"],
+	"extends": ["config:recommended"],
 	"timezone": "Europe/Paris",
 	"schedule": [
 		"after 10:00 am and before 5:00 pm on the first day of the month"
