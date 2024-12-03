@@ -1,7 +1,6 @@
 {
 	"name": "lesjoursfr/filesystem-cache",
 	"type": "library",
-	"version": "2.0.0",
 	"description": "A PSR-6 cache implementation using filesystem. This implementation supports tags",
 	"keywords": [
 		"cache",

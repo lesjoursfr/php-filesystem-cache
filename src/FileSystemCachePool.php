@@ -784,7 +784,6 @@ class FileSystemCachePool implements LoggerAwareInterface, CacheInterface, Cache
     private function generateValues(mixed $default, array|\Traversable $items): iterable
     {
         foreach ($items as $key => $item) {
-            /** @var $item CacheItemInterface */
             if (!$item->isHit()) {
                 yield $key => $default;
             } else {
