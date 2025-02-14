@@ -2,12 +2,9 @@ name: QC Checks
 
 on:
   push:
-    branches-ignore:
-      - renovate/*
-      - stable
-      - beta
-    tags-ignore:
-      - "**"
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   checks:
@@ -20,11 +17,11 @@ jobs:
       - name: Use PHP 8.3
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.3"
+          php-version: 8.3
           coverage: none
           tools: composer, cs2pr
 
-      - name: Composer install
+      - name: Install
         run: |
           composer install
           ./vendor/squizlabs/php_codesniffer/bin/phpcs --config-set installed_paths vendor/escapestudios/symfony2-coding-standard
@@ -41,6 +38,29 @@ jobs:
 
       - name: Show PHPCS results in PR
         run: cs2pr ./phpcs-report.xml
+
+  tests:
+    name: Tests PHP ${{ matrix.php-version }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version: [8.3, 8.4]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use PHP ${{ matrix.php-version }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          coverage: none
+          tools: composer
+
+      - name: Install
+        run: |
+          composer install
+          ./vendor/squizlabs/php_codesniffer/bin/phpcs --config-set installed_paths vendor/escapestudios/symfony2-coding-standard
 
       - name: PHPUnit tests
         run: vendor/bin/phpunit
