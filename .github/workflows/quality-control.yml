@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Use PHP 8.3
         uses: shivammathur/setup-php@v2
@@ -48,7 +48,7 @@ jobs:
         php-version: [8.3, 8.4]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Use PHP ${{ matrix.php-version }}
         uses: shivammathur/setup-php@v2
