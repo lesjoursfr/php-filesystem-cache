@@ -30,11 +30,11 @@
 		"psr/simple-cache": "^3.0"
 	},
 	"require-dev": {
-		"escapestudios/symfony2-coding-standard": "^3.16.0",
-		"phpunit/phpunit": "^12.4.5",
-		"phpstan/phpstan": "^2.1.32",
+		"escapestudios/symfony2-coding-standard": "^3.18.0",
+		"phpunit/phpunit": "^12.5.4",
+		"phpstan/phpstan": "^2.1.33",
 		"phpstan/extension-installer": "^1.4.3",
-		"phpstan/phpstan-phpunit": "^2.0.8",
+		"phpstan/phpstan-phpunit": "^2.0.11",
 		"phpstan/phpstan-deprecation-rules": "^2.0.3",
 		"squizlabs/php_codesniffer": "^4.0.1"
 	},
