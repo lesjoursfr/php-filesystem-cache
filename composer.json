@@ -31,10 +31,10 @@
 	},
 	"require-dev": {
 		"escapestudios/symfony2-coding-standard": "^3.18.0",
-		"phpunit/phpunit": "^12.5.4",
-		"phpstan/phpstan": "^2.1.33",
+		"phpunit/phpunit": "^12.5.8",
+		"phpstan/phpstan": "^2.1.37",
 		"phpstan/extension-installer": "^1.4.3",
-		"phpstan/phpstan-phpunit": "^2.0.11",
+		"phpstan/phpstan-phpunit": "^2.0.12",
 		"phpstan/phpstan-deprecation-rules": "^2.0.3",
 		"squizlabs/php_codesniffer": "^4.0.1"
 	},
