@@ -31,8 +31,8 @@
 	},
 	"require-dev": {
 		"escapestudios/symfony2-coding-standard": "^3.18.0",
-		"phpunit/phpunit": "^13.1.3",
-		"phpstan/phpstan": "^2.1.47",
+		"phpunit/phpunit": "^13.1.7",
+		"phpstan/phpstan": "^2.1.50",
 		"phpstan/extension-installer": "^1.4.3",
 		"phpstan/phpstan-phpunit": "^2.0.16",
 		"phpstan/phpstan-deprecation-rules": "^2.0.4",
