@@ -31,12 +31,12 @@
 	},
 	"require-dev": {
 		"escapestudios/symfony2-coding-standard": "^3.18.0",
-		"phpunit/phpunit": "^13.2.5",
-		"phpstan/phpstan": "^2.2.6",
+		"phpunit/phpunit": "^13.3.1",
+		"phpstan/phpstan": "^2.2.9",
 		"phpstan/extension-installer": "^1.4.3",
 		"phpstan/phpstan-phpunit": "^2.0.18",
-		"phpstan/phpstan-deprecation-rules": "^2.0.4",
-		"squizlabs/php_codesniffer": "^4.0.1"
+		"phpstan/phpstan-deprecation-rules": "^2.0.5",
+		"squizlabs/php_codesniffer": "^4.0.4"
 	},
 	"provide": {
 		"psr/cache-implementation": "^3.0",
